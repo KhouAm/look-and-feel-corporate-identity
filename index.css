@@ -1,0 +1,183 @@
+/* Mobile-first baseline */
+:root{
+  --bg:#ffffff;
+  --accent:#bfe4ff;       /* lichte blauwtint voor header + knoppen */
+  --accent-dark:#9fd4ff;  /* hover */
+  --muted:#6f7b8a;
+  --text:#0f2130;
+  --civic: #D7878C;
+  --interaction: #2D243C;
+  --design: #D7B74A;
+  --accent-green: #9AC9C0;
+  --deep-red: #6B2E2E;
+  --max-width:420px;
+  --spacing-xl:96px;
+  --spacing-lg:56px;
+  --spacing-md:32px;
+  --radius:8px;
+  --btn-shadow: 0 6px 14px rgba(15,33,48,0.08);
+  --btn-shadow-pressed: 0 3px 8px rgba(15,33,48,0.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  -webkit-text-size-adjust:100%;
+}
+
+/* Header */
+.site-header{
+  background:linear-gradient(180deg, var(--accent), #9AC9C0 100%);
+  padding:14px 12px;
+  border-bottom:1px solid rgba(15,33,48,0.04);
+}
+.logo-gradient {
+  background: linear-gradient(
+    100deg,
+    #D7878C 0%,   /* zacht roze */
+    #2D243C 55%,  /* donkerpaars */
+    #D7B74A 60%,  /* goudgeel */
+    #9AC9C0 100%  /* mintgroen */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* voor betere browser support */
+  font-weight: 800;       /* laat de gradient beter uitkomen */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/* klein linkerboven merk/tekst */
+.brand .logo{
+  font-size:12px;
+  line-height:1.05;
+  color:var(--text);
+  opacity:0.85;
+  font-weight:600;
+  white-space:pre-line;
+}
+
+/* Centered page column with roomy vertical rhythm */
+.page{
+  max-width:var(--max-width);
+  margin:18px auto;
+  padding:0 18px 48px;
+}
+
+/* Intro tekstblok */
+.intro{
+  text-align:center;
+  margin-top:18px;
+  margin-bottom:var(--spacing-lg);
+}
+.intro p{
+  margin:0 auto;
+  max-width:320px;
+  font-size:14px;
+  color:black;
+  font-weight:400;
+}
+
+/* Illustratie blok - gestileerd, veel witruimte */
+.illustration{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  margin-bottom:var(--spacing-lg);
+}
+
+/* grote illustratie variant met extra top padding (zoals grote ster op dak) */
+.illustration.large{
+  margin-top:50px;
+  margin-bottom:var(--spacing-xl);
+}
+
+/* Illustratieafbeeldingen */
+.illustration img{
+  max-width:220px;         /* tekeningen zijn relatief klein en gecentreerd */
+  width:90%;
+  height:auto;
+  display:block;
+  opacity:0.95;
+  filter:grayscale(0.02);
+}
+
+/* Fotoblock: beeld rechtdoor, meer breedte mogelijk */
+.photo-block{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  margin-bottom:var(--spacing-lg);
+}
+.photo-block img{
+  width:100%;
+  max-width:320px;
+  height:auto;
+  border-radius:6px;
+  box-shadow: 0 6px 20px rgba(15,33,48,0.06);
+  display:block;
+}
+
+/* CTA knop (lichtblauw, subtle drop shadow) */
+.cta{
+  appearance:none;
+  -webkit-appearance:none;
+  border:0;
+  background:var(--accent);
+  padding:10px 22px;
+  font-size:14px;
+  font-weight:600;
+  color:var(--text);
+  border-radius:6px;
+  box-shadow:var(--btn-shadow);
+  cursor:pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+  width:140px;
+  text-align:center;
+}
+
+/* hover / active states */
+.cta:hover{
+  background:var(--accent-dark);
+  transform:translateY(-2px);
+  box-shadow: 0 10px 22px rgba(15,33,48,0.09);
+}
+.cta:active{
+  transform:translateY(0);
+  box-shadow:var(--btn-shadow-pressed);
+}
+
+/* Kleine visuele rules en lijnen (subtiel) */
+hr{
+  border:0;
+  border-top:1px dashed rgba(15,33,48,0.06);
+  margin:28px 0;
+}
+
+/* Footer spacing */
+.site-footer{
+  height:48px;
+}
+
+/* Responsiveness: grotere schermen (tablet / desktop) */
+@media(min-width:768px){
+  :root{ --max-width:820px; }
+  .page{ padding:0 28px 72px; }
+  .illustration img{ max-width:320px; width:45%; }
+  .cta{ width:170px; padding:12px 28px; font-size:15px; }
+  .intro p{ font-size:16px; max-width:520px; color:var(--muted); }
+}
+
+/* Extra: optioneel centerline (voor mobiele preview look) */
+@media(min-width:1000px){
+  .site-header{ padding:18px 32px; }
+}
