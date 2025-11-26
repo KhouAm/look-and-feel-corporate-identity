@@ -1,0 +1,106 @@
+body {
+    background-color: var(--color-primary);
+}
+
+.wrapper-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: auto;
+
+    .hero-img {
+        width: 100%;
+        height: 350px;
+    }
+
+    h1, p {
+        color: #fff;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .divider {
+        height: 1px;
+        background: #fff;
+        width: 100%;
+        margin: 3em 0;
+    }
+}
+
+.section-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    max-width: 1300px;
+    margin: auto;
+
+    h2 {
+        color: #fff;
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .wrapper-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            @media (min-width: 768px) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+
+    .wrapper-articles {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        @media (min-width: 768px) {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(22em, 1fr));
+            max-width: 1400px;
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.078);
+
+            img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+
+            .wrapper-info {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                padding: 2em;
+                background-color: var(--color-secondary);
+                align-items: flex-start;
+
+                h2 {
+                    font-size: 25px;
+                    margin: 0;
+                    color: var(--color-primary);
+                }
+
+                p {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
